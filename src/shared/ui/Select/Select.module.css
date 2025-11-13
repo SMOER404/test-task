@@ -1,0 +1,127 @@
+.select {
+    position: relative;
+    width: 250px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    border: 1px solid #f0f0f0;
+    background: white;
+    padding: 4px;
+    position: relative;
+}
+
+.open .header,
+.select:focus .header,
+.header:hover {
+    border-bottom-width: 2px;
+    border-bottom-color: #0066cc;
+    margin-bottom: -1px;
+}
+
+.input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 4px 8px;
+    font-size: 14px;
+    background: transparent;
+    color: black;
+}
+
+.input:readOnly {
+    cursor: pointer;
+}
+
+.clearButton,
+.toggleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 16px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+}
+
+.clearButton:hover,
+.toggleButton:hover {
+    color: #0066cc;
+}
+
+.toggleButton.open {
+    transform: rotate(180deg);
+}
+
+.clearButton {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.header:hover .clearButton {
+    opacity: 1;
+}
+
+.options {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-top: none;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bottom {
+    top: 100%;
+}
+
+.top {
+    bottom: 100%;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: none;
+}
+
+.option {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: white;
+    color: black;
+    border: none;
+}
+
+.option:hover {
+    background: #f0f0f0;
+}
+
+.highlighted {
+    background: #e8e8e8;
+}
+
+.selected {
+    background: #dedede;
+}
+
+.noOptions {
+    padding: 8px 12px;
+    color: #666;
+    text-align: center;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.disabled .input {
+    cursor: not-allowed;
+}
